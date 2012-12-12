@@ -1,9 +1,10 @@
+/*globals __dirname */
 
 var fs = require('fs');
 var pathlib = require('path');
 var util = require('util');
 
-var basepath = './frameworks/compass/stylesheets';
+var basepath = __dirname + '/frameworks/compass/stylesheets';
 var ret = "";
 
 var isComment = function(line){
@@ -45,7 +46,7 @@ var readFile = function(path){
       if(!fs.existsSync(newpath)){
         newpath = pathlib.join(basepath,filenameFromImport(l));        
       }
-      util.log('trying to import: ' + newpath);
+      //util.log('trying to import: ' + newpath);
       readFile(newpath);
     }
     else ret += l + "\n";
