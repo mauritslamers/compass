@@ -5,6 +5,7 @@
     "type":"git",
     "url": "https://github.com/mauritslamers/compass.git"
   },
+  "main": "compass.js",
   "keywords": ["node.js","sproutcore","compass"],
   "author": "Chris Eppstein",
   "dependencies": [],
