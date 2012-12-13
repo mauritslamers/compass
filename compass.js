@@ -38,7 +38,7 @@ var readFile = function(path){
   var c = fs.readFileSync(path,'utf8');
   var lines = c.split("\n");
   lines.forEach(function(l){
-    util.log('parsing line: '+ l);
+    //util.log('parsing line: '+ l);
     if(isComment(l)) ret += l + "\n";
     if(isImport(l)){
       
