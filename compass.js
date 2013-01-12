@@ -40,7 +40,7 @@ var readFile = function(path){
   lines.forEach(function(l){
     //util.log('parsing line: '+ l);
     if(isComment(l)) ret += l + "\n";
-    if(isImport(l)){
+    else if(isImport(l)){
       
       newpath = pathlib.join(pathlib.dirname(path), filenameFromImport(l));
       if(!fs.existsSync(newpath)){
