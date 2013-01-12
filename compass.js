@@ -49,7 +49,15 @@ var readFile = function(path){
       //util.log('trying to import: ' + newpath);
       readFile(newpath);
     }
-    else ret += l + "\n";
+    else {
+      var unquoted_progid = /[\s]progid[\s\S]*?;/;
+      var m = unquoted_progid.exec(l);
+      if(m){
+        var line = 'unquote("' + m[0].substr(0,m[0].length-1) + '");';
+        l = l.replace(unquoted_progid,line);
+      }
+      else ret += l + "\n";
+    }
   });
 };
 
