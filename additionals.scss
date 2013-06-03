@@ -1,0 +1,14 @@
+// additional compass functions rewritten in sass
+@function compact($list) {
+  $new-list: ();
+  @each $element in $list {
+    @if $element {
+      $new-list: append($new-list, $element);
+    }
+  }
+  @return $new-list;
+}
+
+@function -compass-list-size($list) {
+  @return length($list);
+}

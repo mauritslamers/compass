@@ -5,7 +5,7 @@ var pathlib = require('path');
 var util = require('util');
 
 var basepath = __dirname + '/frameworks/compass/stylesheets';
-var ret = "";
+var ret = fs.readFileSync(pathlib.join(__dirname,'additionals.scss')).toString();
 
 var isComment = function(line){
   var index = line.trim().indexOf("//");
@@ -46,7 +46,7 @@ var readFile = function(path){
       if(!fs.existsSync(newpath)){
         newpath = pathlib.join(basepath,filenameFromImport(l));        
       }
-      //util.log('trying to import: ' + newpath);
+      util.log('trying to import: ' + newpath);
       readFile(newpath);
     }
     else {
