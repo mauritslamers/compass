@@ -1,5 +1,5 @@
 // additional compass functions rewritten in sass
-@function compact($list) {
+@function compact($list...) {
   $new-list: ();
   @each $element in $list {
     @if $element {

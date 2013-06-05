@@ -46,7 +46,7 @@ var readFile = function(path){
       if(!fs.existsSync(newpath)){
         newpath = pathlib.join(basepath,filenameFromImport(l));        
       }
-      util.log('trying to import: ' + newpath);
+      //util.log('trying to import: ' + newpath);
       readFile(newpath);
     }
     else {
